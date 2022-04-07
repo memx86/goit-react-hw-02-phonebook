@@ -39,6 +39,7 @@ class App extends Component {
   render() {
     const contacts = this.filterContacts();
     const names = this.getNames();
+    const { filter } = this.state;
     return (
       <Fragment>
         <Section>
@@ -54,7 +55,7 @@ class App extends Component {
         <Section>
           <Container>
             <h2>Contacts</h2>
-            <Filter setFilter={this.setFilterState} />
+            <Filter filter={filter} setFilter={this.setFilterState} />
             <ContactList
               contacts={contacts}
               removeContact={this.removeContact}
